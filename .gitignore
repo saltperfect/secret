@@ -15,4 +15,4 @@
 
 tmp/*
 .keys.json
-.secrets
+.secret
