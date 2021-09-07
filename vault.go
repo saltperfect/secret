@@ -56,6 +56,9 @@ func (v *Vault) save() error {
 	if err != nil {
 		return err
 	}
+	if err != nil {
+		return err
+	}
 	err = v.writeKeyValues(writer)
 	return err
 }
@@ -88,5 +91,6 @@ func (v *Vault) Set(key, value string) error {
 		return err
 	}
 	v.keyValues[key] = value
-	return v.save()
+	err = v.save()
+	return err
 }
