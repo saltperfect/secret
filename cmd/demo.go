@@ -8,21 +8,21 @@ import (
 func main() {
 	valt:= secret.NewVault("my-fake-key", ".secret")
 
-	// err := valt.Set("some-key1", "123 some-value")
-	// if err != nil {
-	// 	panic(err)
-	// }
-
-	// err = valt.Set("some-key2", "456 some-value")
-	// if err != nil {
-	// 	panic(err)
-	// }
-	out, err := valt.Get("some-key1")
+	err := valt.Set("some-key", "some-value")
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("value: %s\n", out)
-	out, err = valt.Get("some-key2")
+
+	// err = valt.Set("some-key", "some-value")
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// out, err := valt.Get("some-key1")
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// fmt.Printf("value: %s\n", out)
+	out, err := valt.Get("some-key")
 	if err != nil {
 		panic(err)
 	}
