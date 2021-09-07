@@ -82,6 +82,13 @@ func (v *Vault) Get(key string) (string, error) {
 	}
 	return ret, nil
 }
+func (v *Vault) GetAll() (map[string]string, error) {
+	err := v.load()
+	if err != nil {
+		return nil, err
+	}
+	return v.keyValues, nil
+}
 
 func (v *Vault) Set(key, value string) error {
 	v.mutex.Lock()
